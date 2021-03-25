@@ -34,4 +34,19 @@ jobs:
       - name: Run R Script
         run: |
           Rscript GHA_ex_1.R
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git pull origin master
+          git add tests_today.csv
+          git commit -m "update tests_today.csv" || echo "Nothing to update"
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: automated/fetch
+          branch: ${{ github.ref }}
       
