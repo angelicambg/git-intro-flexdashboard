@@ -1,5 +1,4 @@
 # This is a basic workflow to help you get started with Actions
-
 name: create-test-file
 
 # Controls when the action will run. 
@@ -17,12 +16,22 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Install R
+      # Install R and pacakges
       - name: Install-R
         uses: r-lib/actions/setup-r@v1
         with:
           r-version: '3.5.3' # The R version to download (if necessary) and use.
 
       # Run Script
-      - run: Rscript -e 'print("hello")'
+      - name: Print Hello 
+        run: Rscript -e 'print("hello")'
+
+      - name: Installing packages
+        run: |
+          Rscript -e "install.packages('dplyr')"
+          Rscript -e "install.packages('readr')"
+      
+      - name: Run R Script
+        run: |
+          Rscript GHA_ex_1.R
       
