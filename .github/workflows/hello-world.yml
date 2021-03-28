@@ -27,5 +27,6 @@ jobs:
           r-version: '3.5.3' # The R version to download (if necessary) and use.
 
       # Run Script
-      - run: Rscript -e 'print("hello")'
+      - name: Print
+        run: Rscript -e 'print("hello")'
       
