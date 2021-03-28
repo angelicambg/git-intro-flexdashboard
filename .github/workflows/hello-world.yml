@@ -18,7 +18,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: checkout-repo
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       # Install R
       - name: Install-R
@@ -27,6 +27,6 @@ jobs:
           r-version: '3.5.3' # The R version to download (if necessary) and use.
 
       # Run Script
-      - name: Print
+      - name: Print Hello
         run: Rscript -e 'print("hello")'
       
