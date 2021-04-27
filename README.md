@@ -3,4 +3,4 @@ Learning the first steps of git
 
 this fix issue
 
-test branch trigger
+test branch trigger with path
