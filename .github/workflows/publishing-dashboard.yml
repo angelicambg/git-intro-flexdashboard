@@ -32,7 +32,7 @@ jobs:
 
       - name: Installing packages
         run: |
-          Rscript -e 'install.packages(c("rmarkdown", "flexdashboard", "dplyr", "readr", "ggplot2"))'
+          Rscript -e "install.packages(c("rmarkdown", "flexdashboard", "dplyr", "readr", "ggplot2"), repos = 'https://packagemanager.rstudio.com/cran/__linux__/focal/latest')"
 
       - name: Rendering dashboard
         run: |
