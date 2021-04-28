@@ -7,6 +7,7 @@ on:
     branches:
       # Push events on main branch
       - main
+      - test
     paths:
       - 'README.md'
 
