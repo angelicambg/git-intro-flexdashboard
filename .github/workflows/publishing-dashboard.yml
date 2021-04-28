@@ -34,6 +34,9 @@ jobs:
         run: |
           Rscript -e "install.packages(c("rmarkdown", "flexdashboard", "dplyr", "readr", "ggplot2"), repos = 'https://packagemanager.rstudio.com/cran/__linux__/focal/latest')"
 
+      - name: Install older version of knitr
+        run: Rscript -e 'install.packages("https://cran.r-project.org/src/contrib/Archive/knitr/knitr_1.29.tar.gz", type = "source", repo = NULL)'
+
       - name: Rendering dashboard
         run: |
           Rscript -e 'rmarkdown::render("docs/index.Rmd")'
